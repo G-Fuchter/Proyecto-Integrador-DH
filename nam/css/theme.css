@@ -294,3 +294,17 @@ h6,
     border-left: 1px solid #ff9966!important;
     margin-left: 1em
 }
+
+.registro{
+font-size: 20px;
+  width: 80%;
+  border-left: 20%;
+  border-right: 10%;
+  overflow: hidden;
+}
+
+.form-group {
+float: left;
+  margin-left:10%;
+  margin-right: 10%
+}
