@@ -345,16 +345,23 @@ h6,
 
 /*  Register Form   */
 .registro{
-font-size: 20px;
-  width: 80%;
-  border-left: 20%;
-  border-right: 10%;
-  overflow: hidden;
+display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    width: 40vw;
+    padding: 1%;
+    border: solid;
+    border-width: 4px;
+    border-color: #cc3300;
+    -webkit-box-shadow: 8px 8px 0 0 #cc3300;
+    box-shadow: 8px 8px 0 0 #cc3300;
 }
 
 .registro .form-group {
-float: left;
-  margin-left: 10%;
-  margin-right: 10%1
+  width: 100%;
+    color: #cc3300;
+    font-weight: bold;
+    font-family: 'kappa_textbook';
+    margin: 0px;
 } 
 
