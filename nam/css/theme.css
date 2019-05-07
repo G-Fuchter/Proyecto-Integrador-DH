@@ -49,7 +49,6 @@ h2,
 }
 
 p,
-p.lead,
 .belda {
     font-family: 'beldanorm_regular';
 }
@@ -59,7 +58,8 @@ h4,
 h5,
 h6,
 .btn,
-.kappa-bold {
+.kappa-bold,
+label {
     font-family: 'kappa_textbold';
 }
 
@@ -100,6 +100,29 @@ h6,
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     letter-spacing: 2px
+}
+
+.social a {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    color: #cc3300;
+    border: 1px solid #ff9966 transition: all ease-in-out
+}
+
+.social a:focus,
+.social a:hover,
+.social a:active {
+    transform: scale(1.1);
+}
+
+.user_nav a:hover,
+.user_nav a:focus,
+.user_nav a:active {
+    color: #cc3300
 }
 
 
@@ -143,6 +166,14 @@ h6,
 
 .light_border {
     border-color: #ccffff
+}
+
+.white {
+    color: white
+}
+
+.white_bg {
+    background-color: white
 }
 
 
@@ -295,47 +326,26 @@ h6,
     margin-left: 1em
 }
 
-/*  Login   */
 
-.login-form{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #fff;
-    width: 40vw;
-    padding: 1%;
-    border: solid;
-    border-width: 4px;
-    border-color: #cc3300;
+/*forms*/
+
+form div.fields {
+    border: solid 4px #cc3300;
     -webkit-box-shadow: 8px 8px 0 0 #cc3300;
     box-shadow: 8px 8px 0 0 #cc3300;
 }
 
-.login-form .form-group{
-    width: 100%;
+.form-group {
     color: #cc3300;
-    font-weight: bold;
-    font-family: 'kappa_textbook';
-    margin: 0px;
+    background: none!important
 }
 
-.login-form .form-check{
-    width: 80%;
-}
-
-.login-form button{
-    color: #cc3300;
-    font-size: 1.2rem;
-    min-width: 150px;
-    height: 40px;
-    font-weight: bold;
-}
-
-.login-form .form-check{
+form .form-check {
     color: #cc3300;
     font-weight: bold;
 }
 
-.login-form .form-control{
+form .form-control {
     border-radius: 0px;
     border-width: 4px;
     border-color: #cc3300;
@@ -343,25 +353,82 @@ h6,
     box-shadow: 8px 8px 0 0 #cc3300;
 }
 
-/*  Register Form   */
-.registro{
-display: flex;
+form label {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 2px
+}
+
+.form-control:focus {
+    color: #ff9966;
+    background-color: #fff;
+    border-color: #ff9966;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #ff9966;
+}
+
+
+/*  Login   */
+
+
+/*.login-form {
+  display: flex;
     flex-wrap: wrap;
     background-color: #fff;
     width: 40vw;
     padding: 1%;
-    border: solid;
+    border: solid 4px #cc3300;
+    -webkit-box-shadow: 8px 8px 0 0 #cc3300;
+    box-shadow: 8px 8px 0 0 #cc3300; 
+}
+
+.login-form .form-group {
+    /* width: 100%;
+    color: #cc3300;
+    font-weight: bold;
+    font-family: 'kappa_textbook';
+    margin: 0px; 
+}
+
+.login-form .form-check {
+    width: 80%;
+}
+
+.login-form button {
+    color: #cc3300;
+    font-size: 1.2rem;
+    min-width: 150px;
+    height: 40px;
+    font-weight: bold;
+}
+
+
+.login-form .form-check {
+    color: #cc3300;
+    font-weight: bold;
+}
+
+
+.login-form .form-control {
+    border-radius: 0px;
     border-width: 4px;
     border-color: #cc3300;
     -webkit-box-shadow: 8px 8px 0 0 #cc3300;
     box-shadow: 8px 8px 0 0 #cc3300;
 }
 
-.registro .form-group {
-  width: 100%;
-    color: #cc3300;
-    font-weight: bold;
-    font-family: 'kappa_textbook';
-    margin: 0px;
-} 
 
+.registro {
+    background-color: #fff;
+    border: solid 4px #cc3300;
+    -webkit-box-shadow: 8px 8px 0 0 #cc3300;
+    box-shadow: 8px 8px 0 0 #cc3300;
+}
+
+.registro .form-group {
+    width: 100%;
+    color: #cc3300;
+    font-family: 'kappa_textbook';
+}
+*/
