@@ -330,11 +330,9 @@ h6,
     font-weight: bold;
 }
 
-.login-form .form-check-input{
-    background-color: #cc3300;
-    border-color: #cc3300;
-    border-radius: 0px;
-    border-width: 4px;
+.login-form .form-check{
+    color: #cc3300;
+    font-weight: bold;
 }
 
 .login-form .form-control{
