@@ -368,6 +368,12 @@ form label {
     box-shadow: 0 0 0 0.2rem #ff9966;
 }
 
+.alert-messages{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
 
 /*  Login   */
 

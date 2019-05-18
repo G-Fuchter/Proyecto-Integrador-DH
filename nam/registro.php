@@ -1,5 +1,7 @@
 <?php
-include_once ("includes/header.php")
+include_once ("includes/header.php");
+include_once ("common/serverlogic/server-register.php");
+include_once ("common/alerts.php"); 
 ?>
     <section class="splash accent_bg d-flex justify-content-center align-content-center position-relative py-5">
         <div class="position-absolute back_splash1 d-none d-md-block">
@@ -12,9 +14,16 @@ include_once ("includes/header.php")
                     <p class="white text-center kappa lead">Completá el siguiente formulario para poder armar tu menú</p>
                 </div>
             </header>
+            <div class = "alert-messages justify-content-center">
+                <?php
+                if($errors_found = true){
+                    errors_warning_alert($register_errors);
+                }
+                ?>
+            </div>
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-12 col-sm-8 d-flex justify-content-center align-items-center">
-                    <form class="registro w-100">
+                    <form class="registro w-100" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="fields white_bg p-3 p-sm-5 ">
                             <div class="form-group">
                                 <!-- Full Name -->
@@ -28,8 +37,8 @@ include_once ("includes/header.php")
                             </div>
                             <div class="form-group">
                                 <!-- Full Name -->
-                                <label for="user" class="control-label">Usuario</label>
-                                <input type="text" class="form-control" id="user" name="user">
+                                <label for="email" class="control-label">E-Mail</label>
+                                <input type="text" class="form-control" id="email" name="email">
                             </div>
                             <div class="form-group">
                                 <!-- Full Name -->
@@ -42,18 +51,13 @@ include_once ("includes/header.php")
                                 <input type="text" class="form-control" id="domicilio" name="domicilio">
                             </div>
                             <div class="form-group">
-                                <!-- City-->
-                                <label for="barrio" class="control-label">Barrio</label>
-                                <input type="text" class="form-control" id="barrio" name="barrio">
-                            </div>
-                            <div class="form-group">
                                 <!-- State Button -->
                                 <label for="dieta" class="control-label">Dieta</label>
                                 <select class="form-control" id="dieta">
-                                <option value="AL">Vegana</option>
-                                <option value="AK">Vegetariana</option>
-                                <option value="AK">Homnívora</option>
-                                <option value="AK">Keto</option>
+                                <option name = "dieta" value="vega">Vegana</option>
+                                <option name = "dieta" value="vege">Vegetariana</option>
+                                <option name = "dieta" value="homn">Homnívora</option>
+                                <option name = "dieta" value="keto">Keto</option>
                             </select>
                             </div>
                         </div>
