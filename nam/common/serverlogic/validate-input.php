@@ -14,7 +14,6 @@ function validate_name($name_to_validate, $errors){
     }
     return $errors;
 }
-
 function validate_email($email_to_validate, $errors){
     if(empty($email_to_validate)){
         $errors[] = "Debe ingresar su email!";
@@ -28,7 +27,6 @@ function validate_email($email_to_validate, $errors){
     }
     return $errors;
 }
-
 function validate_street($street_to_validate, $errors){
     if(empty($street_to_validate)){
         $errors[] = "Debe ingresar su dirección!";
@@ -42,7 +40,6 @@ function validate_street($street_to_validate, $errors){
     }
     return $errors;
 }
-
 function validate_password($password_to_validate, $errors){
     if(empty($password_to_validate)){
         $errors[] = "Debe ingresar una contraseña!";
