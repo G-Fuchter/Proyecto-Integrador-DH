@@ -85,4 +85,8 @@ function validate_password($password_to_validate, $errors){
     }
     return $errors;
 }
+
+
+
+
 ?>
