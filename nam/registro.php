@@ -16,7 +16,7 @@ include_once ("common/alerts.php");
             </header>
             <div class = "alert-messages justify-content-center">
                 <?php
-                if($errors_found = true){
+                if($errors_found == true){
                     errors_warning_alert($register_errors);
                 }
                 ?>
@@ -28,27 +28,27 @@ include_once ("common/alerts.php");
                             <div class="form-group">
                                 <!-- Full Name -->
                                 <label for="nombre" class="control-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                <input type="text" class="form-control" id="nombre" name="nombre" value = <?php echo '"'. $nombre .'"' ?>>
                             </div>
                             <div class="form-group">
                                 <!-- Full Name -->
                                 <label for="apellido" class="control-label">Apellido</label>
-                                <input type="text" class="form-control" id="apellido" name="apellido">
+                                <input type="text" class="form-control" id="apellido" name="apellido" value = <?php echo '"'. $apellido .'"' ?>>
                             </div>
                             <div class="form-group">
                                 <!-- Full Name -->
                                 <label for="email" class="control-label">E-Mail</label>
-                                <input type="text" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" value = <?php echo '"'. $email .'"' ?>>
                             </div>
                             <div class="form-group">
                                 <!-- Full Name -->
                                 <label for="pass" class="control-label">Contraseña</label>
-                                <input type="password" class="form-control" id="pass" name="pass">
+                                <input type="password" class="form-control" id="pass" name="pass" value = <?php echo '"'. $pass .'"' ?>>
                             </div>
                             <div class="form-group">
                                 <!-- Street 2 -->
                                 <label for="domicilio" class="control-label">Domicilio</label>
-                                <input type="text" class="form-control" id="domicilio" name="domicilio">
+                                <input type="text" class="form-control" id="domicilio" name="domicilio" value = <?php echo '"'. $domicilio .'"' ?>>
                             </div>
                             <div class="form-group">
                                 <!-- State Button -->
@@ -58,6 +58,21 @@ include_once ("common/alerts.php");
                                 <option name = "dieta" value="vege">Vegetariana</option>
                                 <option name = "dieta" value="homn">Homnívora</option>
                                 <option name = "dieta" value="keto">Keto</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <!-- State Button -->
+                                <label for="pais" class="control-label">País de Residencia</label>
+                                <select class="form-control" id="pais" name="pais">
+                                <option name = "pais" id="pais" value="Argentina">Argentina</option>
+                                <option name = "pais" value="Brasil">Brasil</option>
+                                <option name = "pais" value="Bolivia">Bolivia</option>
+                                <option name = "pais" value="Chile">Chile</option>
+                                <option name = "pais" value="Colombia">Colombia</option>
+                                <option name = "pais" value="Ecuador">Ecuador</option>
+                                <option name = "pais" value="Paraguay">Paraguay</option>
+                                <option name = "pais" value="Peru">Peru</option>
+                                <option name = "pais" value="Uruguay">Uruguay</option>
                             </select>
                             </div>
                         </div>

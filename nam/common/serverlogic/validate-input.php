@@ -47,8 +47,25 @@ function validate_password($password_to_validate, $errors){
     if(empty($password_to_validate)){
         $errors[] = "Debe ingresar una contraseña!";
     }else{
-        if(strlen($password_to_validate) > 40 || strlen($password_to_validate) < 8){
-            $errors[] = "Contraseña debe tener mínimo 8 caracteres y un máximo de 39";
+        if(strlen($password_to_validate) > 50 || strlen($password_to_validate) < 8){
+            $errors[] = "Contraseña debe tener mínimo 8 caracteres y un máximo de 50";
+        }
+    }
+    return $errors;
+}
+
+function validate_selected_value($selected_value_to_validate, $possible_values, $errors){
+    if(empty($selected_value_to_validate)){
+        $errors[] = "Debe ingresar una contraseña!";
+    }else{
+        $value_matched = false;
+        foreach($possible_values as $defined_value){
+            if($selected_value_to_validate == $defined_value){
+                $value_matched = true;
+            }
+        }
+        if(!$value_matched){
+            $errors[] = "El valor seleccionado no corresponde a las posibles opciones";
         }
     }
     return $errors;
