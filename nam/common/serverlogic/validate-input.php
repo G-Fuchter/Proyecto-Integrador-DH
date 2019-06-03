@@ -1,4 +1,5 @@
 <?php
+include_once("database-service.php");
 /**
  * Returns any errors, if there are any.
  */
@@ -23,6 +24,9 @@ function validate_email($email_to_validate, $errors){
         }
         if(strlen($email_to_validate) > 40){
             $errors[] = "Email demasiado largo";
+        }
+        if(checkIfEmailHasBeenRegistered($email_to_validate, "users.json")){
+            $errors[] = "Email ya está registrado";
         }
     }
     return $errors;

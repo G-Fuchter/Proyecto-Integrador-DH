@@ -1,10 +1,11 @@
 <?php
-include_once("validate-input.php");
 session_start();
+include_once("validate-input.php");
+include_once("database-service.php");
 // define variables and set to empty values
 $nombre = $email = $pass = $domicilio = $apellido = "";
 $register_errors = [];
-$errors_found = false;
+$errors_found = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $nombre = test_input($_POST["nombre"]);
@@ -32,6 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["register-info"]["pais"] = $pais;
   }else{ // Si no hay errores
     $errors_found = false;
+    $user["name"] = $nombre;
+    $user["surname"] = $apellido;
+    $user["password"] = $pass;
+    $user["country"] = $pais;
+    $user["address"] = $domicilio;
+    $user["email"] = $email;
+    addUser($user, "users.json");
   }
 }else{
     if(isset($_SESSION["register-info"])){
@@ -52,9 +60,7 @@ function test_input($data) {
   return $data;
 }
 
-/**
- * Returns any errors, if there are any.
- */
+/*
 function validate_name($name_to_validate, $errors){
     if(empty($name_to_validate)){
         $errors[] = "Debe ingresar su nombre y su apellido!";
@@ -106,4 +112,5 @@ function validate_password($password_to_validate, $errors){
     }
     return $errors;
 }
+*/
 ?>

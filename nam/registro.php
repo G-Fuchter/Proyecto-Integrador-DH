@@ -1,7 +1,11 @@
 <?php
-include_once ("includes/header.php");
 include_once ("common/serverlogic/server-register.php");
-include_once ("common/alerts.php"); 
+if($errors_found == false){
+    header("Location:register-confirm.php");
+    exit;
+}
+include_once ("includes/header.php");
+include_once ("common/alerts.php");
 ?>
     <section class="splash accent_bg d-flex justify-content-center align-content-center position-relative py-5">
         <div class="position-absolute back_splash1 d-none d-md-block">
