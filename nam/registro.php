@@ -57,11 +57,11 @@ include_once ("common/alerts.php");
                             <div class="form-group">
                                 <!-- State Button -->
                                 <label for="dieta" class="control-label">Dieta</label>
-                                <select class="form-control" id="dieta">
-                                <option name = "dieta" value="vega">Vegana</option>
-                                <option name = "dieta" value="vege">Vegetariana</option>
-                                <option name = "dieta" value="homn">Homnívora</option>
-                                <option name = "dieta" value="keto">Keto</option>
+                                <select class="form-control" id="dieta" name="dieta">
+                                <option name = "dieta" value="Vegan">Vegana</option>
+                                <option name = "dieta" value="Vegeterian">Vegetariana</option>
+                                <option name = "dieta" value="Gluten Free">Sin Gluten</option>
+                                <option name = "dieta" value="Normal">Sin Restricciones</option>
                             </select>
                             </div>
                             <div class="form-group">

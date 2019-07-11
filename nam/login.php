@@ -18,7 +18,7 @@ include_once ("common/alerts.php");
 <div class = "alert-messages justify-content-center">
                 <?php
                 if($errors_found == true){
-                    errors_warning_alert($register_errors);
+                    errors_warning_alert($login_errors);
                 }
                 ?>
             </div>

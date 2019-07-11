@@ -59,4 +59,16 @@ function login($email, $password, $path){
     }
     return false;
 }
+
+class LoggerService {
+
+    public static function log (string $message) {
+        $json_content = file_get_contents("log.json");
+        $logs = json_decode($json_content,true);
+        $logs[] = $message;
+        $json_data = json_encode($logs);
+        file_put_contents("log.json", $json_data);
+    }
+
+}
 ?>
