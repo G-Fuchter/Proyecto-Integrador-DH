@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if(sizeof($login_errors) > 0){ // Si hay errores
     $errors_found = true;
   }else{ // Si no hay errores
-    $errors_found = false;
+    return "exito.html";
   }
 }
 function test_input($data) {
