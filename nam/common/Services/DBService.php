@@ -15,9 +15,9 @@ class DBService
     {
         $this->database = new PDO($this->dsn, $this->user, $this->pass);
         // throw exceptions, when SQL error is caused
-        $this->database ->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->database->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         // prevent emulation of prepared statements
-        $this->database ->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+        $this->database->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
     }
 
     public static function getInstance()
@@ -44,6 +44,33 @@ class DBService
             LoggerService::log("User saved " . $user->getEmail());
         } else {
             LoggerService::log("User not saved " . $user->getEmail());
+        }
+    }
+
+    public function getUserWithEmail(string $email)
+    {
+        $statement = $this->database->prepare('SELECT * FROM users WHERE email=:email');
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $result["PASSWORD"] = substr( $result["PASSWORD"], 0, 60 ); //utf8_encode($hash)
+        $result["PASSWORD"] = utf8_encode($result["PASSWORD"]);
+        if(!empty($result)){
+            $user = new User($result["ID"], $result["NAME"], $result["SURNAME"], $result["EMAIL"], $result["PASSWORD"], $result["ADDRESS"], $result["DIET"], $result["COUNTRY"]);
+            return $user;
+        }
+    }
+
+    public function doesThisUserExists(string $email)
+    {
+        $statement = $this->database->prepare('SELECT * FROM users WHERE email=:email');
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        if(!empty($result)){
+            return true;
+        }else{
+            return false;
         }
     }
 }

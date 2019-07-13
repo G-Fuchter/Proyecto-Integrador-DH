@@ -1,10 +1,12 @@
 <?php
 include_once("common/AbstractModels/InputValidator.php");
+include_once("common/Services/DBService.php");
 
 class RegisterValidator extends InputValidator {
 
     public static function validate_email($email_to_validate, $errors)
     {
+        $db = DBService::getInstance();
         if (empty($email_to_validate)) {
             $errors[] = "Debe ingresar su email!";
         } else {
@@ -14,7 +16,7 @@ class RegisterValidator extends InputValidator {
             if (strlen($email_to_validate) > 40) {
                 $errors[] = "Email demasiado largo";
             }
-            if (checkIfEmailHasBeenRegistered($email_to_validate, "users.json")) {
+            if ($db->doesThisUserExists($email_to_validate)){
                 $errors[] = "Email ya está registrado";
             }
         }

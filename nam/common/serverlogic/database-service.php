@@ -62,7 +62,7 @@ function login($email, $password, $path){
 
 class LoggerService {
 
-    public static function log (string $message) {
+    public static function log ($message) {
         $json_content = file_get_contents("log.json");
         $logs = json_decode($json_content,true);
         $logs[] = $message;
