@@ -3,7 +3,7 @@ include_once("common/StaticClasses/LoginValidator.php");
 include_once("common/Services/DBService.php");
 include_once("common/serverlogic/database-service.php");
 // define variables and set to empty values
-$email = $pass  = ""
+$email = $pass  = "";
 $login_errors = [];
 $errors_found = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
