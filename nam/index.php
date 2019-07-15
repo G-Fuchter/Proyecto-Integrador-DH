@@ -1,5 +1,11 @@
 <?php
-include_once ("includes/header.php")
+include_once("common/Models/User.php");
+session_start();
+if($_SESSION["user-logged"] == true){
+    include_once("includes/LoggedInHeader.php");
+}else{
+    include_once("includes/header.php");
+}
 ?>
     <main role="main">
         <section class="splash accent_bg d-flex justify-content-center align-content-center position-relative py-5">

@@ -24,12 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function validateUserLogin($email, $password, $login_errors) {
   $db = DBService::getInstance();
-  LoggerService::log($password);
   $user = $db->getUserWithEmail($email);
-  LoggerService::log($user->getPassword());
   echo($user->getPassword());
   if(isset($user)){
     if(password_verify($password, $user->getPassword())){
+      LoggerService::log($user->getName());
       $_SESSION["session-user"] = $user;
       $_SESSION["user-logged"] = true;
       return[];

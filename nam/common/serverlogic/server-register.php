@@ -35,12 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["register-info"] = [$nombre, $apellido, $email, $pass, $domicilio, $dieta, $pais];
   } else { // Si no hay errores
     $errors_found = false;
-    $userToSave = new User(0, $nombre, $apellido, $email, $password, $domicilio, $dieta, $pais);
+    $userToSave = new User(0, $nombre, $apellido, $email, $pass, $domicilio, $dieta, $pais);
     $db->saveUser($userToSave);
   }
 } else {
   if (isset($_SESSION["register-info"])) {
-    LoggerService::log($_SESSION["register-info"]);
     $nombre = $_SESSION["register-info"][0];
     $apellido = $_SESSION["register-info"][1];
     $email = $_SESSION["register-info"][2];

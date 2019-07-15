@@ -56,6 +56,7 @@ class DBService
         $result["PASSWORD"] = substr( $result["PASSWORD"], 0, 60 ); //utf8_encode($hash)
         $result["PASSWORD"] = utf8_encode($result["PASSWORD"]);
         if(!empty($result)){
+            LoggerService::log($result);
             $user = new User($result["ID"], $result["NAME"], $result["SURNAME"], $result["EMAIL"], $result["PASSWORD"], $result["ADDRESS"], $result["DIET"], $result["COUNTRY"]);
             return $user;
         }

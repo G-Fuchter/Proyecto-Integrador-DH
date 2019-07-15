@@ -1,8 +1,11 @@
 <?php
+include_once("common/Models/User.php");
+session_start();
 include_once("includes/header.php");
 include_once("common/serverlogic/server-login.php");
 include_once("common/alerts.php");
-session_start();
+include_once("common/serverlogic/database-service.php");
+
 if (isset($_SESSION["user-logged"])) {
     if ($_SESSION["user-logged"]) {
         header("Location:index.php");
